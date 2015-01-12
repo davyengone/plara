@@ -15,11 +15,11 @@ module.exports = function(grunt){
 			},
 			lib:{
 				files:'lib/*.js',
-				tasks: ['jshint', '6to5']
+				tasks: ['newer:jshint', '6to5']
 			},
 			mocha:{
 				files:'test/*.js',
-				tasks: ['jshint', 'mochaTest']
+				tasks: ['newer:jshint', 'mochaTest']
 			}
 		},
 		mochaTest:{
@@ -53,4 +53,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-6to5');
 	grunt.loadNpmTasks('grunt-mocha-test');
 	grunt.loadNpmTasks('grunt-esnext');
+	grunt.loadNpmTasks('grunt-newer');
+
 }

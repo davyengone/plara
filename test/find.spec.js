@@ -1,26 +1,34 @@
 
 var expect = require('chai').expect;
-var lp = require('../lib/dist/find').pLara;
+require('../lib/dist/find');
 
-describe('Find function', function () {
-	
-	it('pLara has a property find', function () {
-		var l = new lp();
-		expect(l).to.have.property('fin');
+describe('Array', function () {
+
+	it('has a property find', function () {
+		expect([]).to.have.property('find');
 	});
 
-	describe('no arguments passed', function () {
-		
-		var sources;
+	describe('Find', function () {
 
-		beforeEach(function () {
-			sources = ['davy', 'yorick'];	
+		describe('Is called with no arguments', function () {
+			it('Returns an empty array ', function(){
+				expect([].find()).to.deep.equal([]);
+			});
 		});
 
+		describe('Is called with an argument', function () {
+			
+			describe('A string', function () {
+				var sources;
+				
+				beforeEach(function () {
+					sources = ['davy', 'yorick'];
+				});
 
-		it('Returns an empty array', function(){
-			var result = lp.find('davy');
-			expect(result).to.be.equal(true);
+				it('returns an array', function () {
+					expect(sources.find('davy')).to.deep.equal(['davy']);
+				});
+			});
 		});
 	});
 });

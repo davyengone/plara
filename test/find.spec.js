@@ -22,14 +22,19 @@ describe('Array', function () {
 				var sources;
 				
 				beforeEach(function () {
-					sources = ['davy', 'yorick'];
+					sources = ['davy', 'yorick', 'denis'];
 				});
 
 				it('returns an array', function () {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
+
 				});
 			});
 		});
 	});
 });
 
+// sources.find(c => c.startWith('d')); => ['davy', 'denis']
+// sources
+// .find(c => c.endWith('y')) => ['davy']
+// .uppercase(c => c); => ['DAVY']

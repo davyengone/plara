@@ -27,7 +27,42 @@ describe('Array', function () {
 
 				it('returns an array', function () {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
+				});
+			});
 
+			describe('Is called with an object literal', function () {
+				var sources;
+				
+				beforeEach(function () {
+					sources = ['davy', 'yorick', 'denis'];
+				});
+
+				it('returns an array', function () {
+					expect(sources.find('davy')).to.deep.equal(['davy']);
+				});
+			});
+
+			describe('Is called with a function', function () {
+				var sources;
+				
+				beforeEach(function () {
+					sources = { name: 'davy', age: 32 };
+				});
+
+				it('returns an array', function () {
+					expect(sources.find('davy')).to.deep.equal(['davy']);
+				});
+			});
+
+			describe('Is called with a lambda expression', function () {
+				var sources;
+				
+				beforeEach(function () {
+					sources = ['davy', 'yorick', 'denis'];
+				});
+
+				it('returns an array', function () {
+					expect(sources.find('davy')).to.deep.equal(['davy']);
 				});
 			});
 		});

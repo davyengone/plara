@@ -1,1 +1,0 @@
-{"version":3,"sources":["lib/index.js"],"names":[],"mappings":";;IAAM,MAAM,GAEA,SAFN,MAAM,CAEC,IAAI,EAAC;AAChB;AACA;CACA;;;;;AAIF,IAAI,CAAC,GAAG,IAAI,MAAM,CAAC,MAAM,CAAC,CAAC","file":"lib/index.js","sourcesContent":["class Person{\n\t\n\tconstructor(name){\n\t\tconsole.log(name);\n\t\tthis.name = name;\n\t}\n}\n\n\nvar p = new Person('davy');"]}

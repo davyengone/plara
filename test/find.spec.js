@@ -1,67 +1,66 @@
+import chai from 'chai';
+let expect = chai.expect;
+import {find} from '../lib/find';
 
-var expect = require('chai').expect;
-require('../lib/dist/find');
+describe('Array', ()=> {
 
-describe('Array', function () {
+	// it('has a property find', ()=> {
+	// 	expect([]).to.have.property('find');
+	// });
 
-	it('has a property find', function () {
-		expect([]).to.have.property('find');
-	});
+	describe('Find', ()=> {
+    beforeEach(()=>{
+      [].find = find;
+      Array.prototype.find = find;
+    });
 
-	describe('Find', function () {
-
-		describe('Is called with no arguments', function () {
+		describe('Is called with no arguments', ()=> {
 			it('Returns an empty array ', function(){
 				expect([].find()).to.deep.equal([]);
 			});
 		});
 
-		describe('Is called with an argument', function () {
-			
-			describe('A string', function () {
+		describe('Is called with an argument', ()=> {
+			describe('A string', ()=> {
 				var sources;
-				
-				beforeEach(function () {
+				beforeEach(()=> {
 					sources = ['davy', 'yorick', 'denis'];
 				});
 
-				it('returns an array', function () {
+				it('returns an array', ()=> {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
 				});
 			});
 
-			describe('Is called with an object literal', function () {
+			describe('Is called with an object literal', ()=> {
 				var sources;
-				
-				beforeEach(function () {
+				beforeEach(()=> {
 					sources = ['davy', 'yorick', 'denis'];
 				});
 
-				it('returns an array', function () {
+				it('returns an array', ()=> {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
 				});
 			});
 
-			describe('Is called with a function', function () {
+			describe('Is called with a function', ()=> {
 				var sources;
-				
-				beforeEach(function () {
+				beforeEach(()=> {
 					sources = { name: 'davy', age: 32 };
 				});
 
-				it('returns an array', function () {
+				it('returns an array', ()=> {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
 				});
 			});
 
-			describe('Is called with a lambda expression', function () {
+			describe('Is called with a lambda expression', ()=> {
 				var sources;
-				
-				beforeEach(function () {
+				beforeEach(()=> {
 					sources = ['davy', 'yorick', 'denis'];
 				});
 
-				it('returns an array', function () {
+				it('returns an array', ()=> {
 					expect(sources.find('davy')).to.deep.equal(['davy']);
 				});
 			});

@@ -1,7 +1,7 @@
 {
   "name": "plara",
   "version": "0.0.1",
-  "description": "'functional library in javascript'",
+  "description": "functional library in javascript",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel/register -w",

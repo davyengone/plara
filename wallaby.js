@@ -1,25 +1,11 @@
-var babel = require('babel');
-
-module.exports = function (wallaby) {
+module.exports = function () {
   return {
     files: [
-      'lib/*.js'
+      'lib/*.ts'
     ],
 
     tests: [
-      'test/*spec.js'
+      'test/*spec.ts'
     ],
-
-    env: {
-      type: 'node'
-    },
-
-    compilers: {
-      '**/*.js': wallaby.compilers.babel({
-        babel: babel,
-        stage: 0,
-        optional: ['es7.comprehensions', 'runtime']
-      })
-    }
   };
 };

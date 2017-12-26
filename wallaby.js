@@ -13,7 +13,7 @@ module.exports = function (w) {
     },
 
     compilers: {
-      '**/*.ts': w.compilers.typeScript({ module: 'commonjs' })
+      '**/*.ts': w.compilers.typeScript({ module: 'commonjs', target: 'es6' })
     }
   };
 };

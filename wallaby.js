@@ -1,11 +1,19 @@
-module.exports = function () {
+module.exports = function (w) {
   return {
     files: [
       'lib/*.ts'
     ],
 
     tests: [
-      'test/*spec.ts'
+      'test/*.spec.ts'
     ],
+
+    env: {
+      type: 'node'
+    },
+
+    compilers: {
+      '**/*.ts': w.compilers.typeScript({ module: 'commonjs' })
+    }
   };
 };

@@ -9,9 +9,9 @@ module.exports = {
 		loaders:[
 
 			{
-				test: /\.js$/,
+				test: /\.ts$/,
 				exclude: /node_modules/,
-				loader: 'babel'
+				loader: 'ts-node'
 			}
 		]
 	}

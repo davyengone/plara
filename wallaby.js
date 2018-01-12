@@ -1,13 +1,11 @@
-var babel = require('babel');
-
-module.exports = function (wallaby) {
+module.exports = function (w) {
   return {
     files: [
-      'lib/*.js'
+      'lib/*.ts'
     ],
 
     tests: [
-      'test/*spec.js'
+      'test/*.spec.ts'
     ],
 
     env: {
@@ -15,11 +13,7 @@ module.exports = function (wallaby) {
     },
 
     compilers: {
-      '**/*.js': wallaby.compilers.babel({
-        babel: babel,
-        stage: 0,
-        optional: ['es7.comprehensions', 'runtime']
-      })
+      '**/*.ts': w.compilers.typeScript({ module: 'commonjs', target: 'es6' })
     }
   };
 };

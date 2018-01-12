@@ -1,13 +1,10 @@
-import chai from 'chai';
-let expect = chai.expect;
+import { expect } from 'chai';
 import {find} from '../lib/find';
 
 describe('Array', () => {
 	describe('Find', ()=> {
 
     let sources = [];
-
-
 	describe('Is called with no arguments', ()=> {
 		it('Returns an empty array ', function(){
 			expect(find(sources)).to.deep.equal([]);

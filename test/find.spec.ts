@@ -4,7 +4,7 @@ import {find} from '../lib/find';
 describe('Array', () => {
 	describe('Find', ()=> {
 
-    let sources = [];
+  let sources = [];
 	describe('Is called with no arguments', ()=> {
 		it('Returns an empty array ', function(){
 			expect(find(sources)).to.deep.equal([]);

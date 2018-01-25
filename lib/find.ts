@@ -3,14 +3,21 @@
 // .find(c => c.endWith('y')) => ['davy']
 // .uppercase(c => c); => ['DAVY']
 
+interface IFindPredicate {
+  (): boolean
+}
 
-export function find(collection, fn) {
+export function find<T>(collection:T[], fn?: IFindPredicate | string) {
   let result = [];
-  if (typeof arguments[0] === 'string') {
+  if (typeof fn === 'function') {
     for(let i = 0; i < collection.length; i++){
       if(fn())
         result = [...result, this[i]];
     }
+  }
+
+  if(typeof fn === 'string'){
+
   }
   return result;
 }

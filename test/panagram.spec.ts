@@ -1,7 +1,6 @@
 import {expect } from 'chai';
 import { Pangram } from '../lib/pangram';
 
-
 describe('Pangram()', () => {
 
   it('empty sentence', () => {

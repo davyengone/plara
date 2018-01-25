@@ -4,7 +4,8 @@ import {find} from '../lib/find';
 describe('Array', () => {
 	describe('Find', ()=> {
 
-  let sources = [];
+    let sources = [];
+
 	describe('Is called with no arguments', ()=> {
 		it('Returns an empty array ', function(){
 			expect(find(sources)).to.deep.equal([]);
@@ -18,7 +19,7 @@ describe('Array', () => {
             });
 
             it('returns an array with element it found', ()=> {
-                expect(sources.find('davy')).to.deep.equal(['davy']);
+                expect(find(sources, 'davy')).to.deep.equal(['davy']);
             });
         });
 
@@ -26,7 +27,7 @@ describe('Array', () => {
             sources = [{name:'davy'}, {name:'yorick'}, {name:'denis'}];
 
             it('returns an array', ()=> {
-                expect(sources.find('davy')).to.deep.equal(['davy']);
+                expect(find(sources, 'davy')).to.deep.equal(['davy']);
             });
         });
 
@@ -34,7 +35,7 @@ describe('Array', () => {
             sources = { name: 'davy', age: 32 };
 
             it('returns an array', ()=> {
-                expect(sources.find('davy')).to.deep.equal(['davy']);
+                expect(find(sources, 'davy')).to.deep.equal(['davy']);
             });
         });
 

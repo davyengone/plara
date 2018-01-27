@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/_mocha --require ts-node/register --watch-extensions ts,tsx 'test/*.ts'",
+    "ava": "ava test/find.spec.ts",
     "coverage": "./node_modules/.bin/_mocha -- --compilers js:babel/register",
     "cover": "./node_modules/.bin/babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
     "docs": "esdoc -c esdoc.json"

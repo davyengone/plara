@@ -1,5 +1,12 @@
-import { expect } from 'chai';
-import {find} from '../lib/find';
+import { expect } from 'chai'
+import {find} from '../lib/find'
+
+import test from 'ava'
+
+let sources = []
+test(t => {
+    t.deepEqual(find(sources), [])
+})
 
 describe('Array', () => {
 	describe('Find', ()=> {
@@ -8,7 +15,8 @@ describe('Array', () => {
 
 	describe('Is called with no arguments', ()=> {
 		it('Returns an empty array ', function(){
-			expect(find(sources)).to.deep.equal([]);
+            expect(find(sources)).to.deep.equal([]);
+
 		});
 	});
 

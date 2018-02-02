@@ -1,13 +1,6 @@
 import { expect } from 'chai'
 import {find} from '../lib/find'
 
-import test from 'ava'
-
-let sources = []
-test(t => {
-    t.deepEqual(find(sources), [])
-})
-
 describe('Array', () => {
 	describe('Find', ()=> {
 
